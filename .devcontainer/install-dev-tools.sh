@@ -12,7 +12,7 @@ wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu2404/x86_64/
 dpkg -i cuda-keyring_1.1-1_all.deb
 rm cuda-keyring_1.1-1_all.deb
 # install recommended packages
-apt-get install zlib1g g++ freeglut3-dev \
+apt-get install zlib1g g++ freeglut3-dev git \
     libx11-dev libxmu-dev libxi-dev libglu1-mesa libglu1-mesa-dev libfreeimage-dev -y
 # clean up
 uv pip cache purge
@@ -21,3 +21,4 @@ apt-get clean
 # fun stuff for me 
 curl -sS https://starship.rs/install.sh | sh
 echo $'eval "$(starship init bash)"' >> /root/.bashrc
+starship preset pure-preset -o ~/.config/starship.toml
